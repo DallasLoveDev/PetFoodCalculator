@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pet Food Calculator</title>
+	<link rel="stylesheet" href="./src/css/normalize.css">
+	<link rel="stylesheet" href="./src/css/style.css">
+	<script src="https://cdn.jsdelivr.net/npm/appwrite@17.0.0/dist/iife/sdk.min.js"></script>
+  </head>
+  <body>
+	<h1>Pet Food Calculator</h1>
+
+	<div id="baddiesWritingBadCode">
+		<section id="left">
+			<h2>Add New Food</h2>
+			<form action="" id="addFood">
+				<input type="text" name="foodName" id="foodName" placeholder="Food Name"><br>
+				<input type="text" name="caloriesPerKilogram" id="caloriesPerKilogram" placeholder="Calories per Kilogram"><br>
+				<input type="submit" id="submitFood">
+			</form>
+			
+			<h2>Add New Pet</h2>
+			<form action="" id="addPet">
+				<input type="text" name="petName" id="petName" placeholder="Pet Name"><br>
+				<input type="text" name="weight" id="weight" placeholder="Weight in Pounds"><br>
+				<input type="submit" id="submitPet">
+			</form>
+
+			<h2>Modifiers (Required)</h2>
+			<form action="" id="selectModifier">
+				<input type="radio" name="modifier" id="maintenance" data-modifier="1">
+				<label for="maintenance">Maintenance (1x)</label><br>
+				<input type="radio" name="modifier" id="weightLoss" data-modifier="0.8">
+				<label for="weightLoss">Weight Loss (0.8x)</label><br>
+				<input type="radio" name="modifier" id="weightGain" data-modifier="1.5">
+				<label for="weightGain">Weight Gain (1.5x)</label><br>
+				<input type="radio" name="modifier" id="underFourMonths" data-modifier="2.5">
+				<label for="underFourMonths">Under 4 Months Old (2.5x)</label><br>
+				<input type="radio" name="modifier" id="overFourMonths" data-modifier="2">
+				<label for="overFourMonths">4 to 12 Months Old (2x)</label><br>
+				<input type="radio" name="modifier" id="customModifier" data-modifier="0">
+					<input type="text" name="customModifier" placeholder="Custom Modifier" id="customModifierText">
+				</input>
+			</form>
+
+			<h2>Percent of Daily Calories (Required)</h2>
+			<form action="">
+				<input type="number" placeholder="ex. 50% = 1 of 2 meals" id="percentOfDailyCalories">
+			</form>
+
+			<h2>Daily Calorie Override (Optional)</h2>
+			<form action="">
+				<input type="number" placeholder="Enter desired daily calories" id="calorieOverride">
+			</form><br><br>
+
+		</section>
+		<section id="right">
+			<h2>Select Food (Required)</h2>
+			<form action="" id="selectFood"></form>
+			<h2>Select Pet (Required)</h2>
+			<form action="" id="selectPet"></form>
+		</section>
+	</div>
+
+	<div id="weGoGet">
+		<button id="calculateCal">Calculate</button>
+	</div>
+
+	<h2 id="displayOutput"></h2>
+
+	<footer>
+		<span>Powered by <a href="https://appwrite.io/">Appwrite</a> | Built for the <a href="https://100devs.org/">100Devs</a> Mini Hackathon | <a href="https://github.com/DallasLoveDev/PetFoodCalculator">GitHub Repo</a></span>
+	</footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
